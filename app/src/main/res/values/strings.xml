@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">Dramania</string>
     <string name="action_settings">Settings</string>
+    <string name="nav_drawer_airingtoday">Airing Today</string>
+    <string name="nav_drawer_toprated">Top Rated</string>
+    <string name="nav_drawer_popular">Popular</string>
+    <string name="nav_drawer_mycollection">My Collections</string>
+    <string name="nav_drawer_othertitle">Other</string>
+    <string name="nav_drawer_settings">Settings</string>
+    <string name="nav_drawer_share">Share This App</string>
+    <string name="nav_drawer_report">Report Error</string>
+
+    <string-array name="nav_drawer_fragment_titles">
+        <item>Airing Today</item>
+        <item>Top Rated</item>
+        <item>Popular</item>
+        <item>My Collections</item>
+        <item>Settings</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_drawer">open_drawer</string>
+    <string name="close_drawer">close_drawer</string>
+
 </resources>

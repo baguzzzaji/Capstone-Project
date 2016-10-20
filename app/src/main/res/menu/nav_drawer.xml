@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_airing_today"
+            android:icon="@drawable/calendar_today"
+            android:title="@string/nav_drawer_airingtoday"/>
+        <item
+            android:id="@+id/nav_top_rated"
+            android:icon="@drawable/trophy_variant"
+            android:title="@string/nav_drawer_toprated"/>
+        <item
+            android:id="@+id/nav_popular"
+            android:icon="@drawable/ticket"
+            android:title="@string/nav_drawer_popular"
+            />
+        <item
+            android:id="@+id/nav_collection"
+            android:icon="@drawable/content_save"
+            android:title="@string/nav_drawer_mycollection"/>
+    </group>
+
+    <item android:title="@string/nav_drawer_othertitle">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/nav_drawer_settings"/>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share_black_24dp"
+                android:title="@string/nav_drawer_share"
+                />
+            <item
+                android:id="@+id/nav_report"
+                android:icon="@drawable/ic_warning_black_24dp"
+                android:title="@string/nav_drawer_report"/>
+        </menu>
+    </item>
+</menu>
