@@ -1,4 +1,4 @@
-package net.sebariskode.dramania;
+package net.sebariskode.dramania.toprated;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import net.sebariskode.dramania.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AiringTodayFragment extends Fragment {
+public class TopRatedFragment extends Fragment {
 
 
-    public AiringTodayFragment() {
+    public TopRatedFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class AiringTodayFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_airing_today, container, false);
+        return inflater.inflate(R.layout.fragment_top_rated, container, false);
     }
 
 }

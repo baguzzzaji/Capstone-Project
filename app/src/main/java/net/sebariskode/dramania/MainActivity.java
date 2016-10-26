@@ -3,7 +3,6 @@ package net.sebariskode.dramania;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -18,9 +17,19 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import net.sebariskode.dramania.airingtoday.AiringTodayFragment;
+import net.sebariskode.dramania.data.themoviedb.RetrofitHelper;
+import net.sebariskode.dramania.mycollections.MyCollectionsFragment;
+import net.sebariskode.dramania.popular.PopularFragment;
+import net.sebariskode.dramania.toprated.TopRatedFragment;
+
 import butterknife.BindArray;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
         imgNavDrawerHeader = (ImageView) navDrawerHeader.findViewById(R.id.nav_drawer_image_bg);
         loadNavDrawerHeader();
         setupNavigationView();
+
+        if (savedInstanceState == null) {
+            FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+            tx.replace(R.id.frame, new AiringTodayFragment());
+            tx.commit();
+        }
     }
 
     private void setupNavigationView() {
@@ -101,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     default:
                         NAV_MENU_INDEX = 0;
+                        TAG_CURRENT = TAG_AIRING_TODAY;
                 }
 
                 if (item.isChecked()) {
@@ -166,17 +182,13 @@ public class MainActivity extends AppCompatActivity {
     private Fragment getFragment() {
         switch (NAV_MENU_INDEX) {
             case 0:
-                AiringTodayFragment airingTodayFragment = new AiringTodayFragment();
-                return airingTodayFragment;
+                return new AiringTodayFragment();
             case 1:
-                TopRatedFragment topRatedFragment = new TopRatedFragment();
-                return topRatedFragment;
+                return new TopRatedFragment();
             case 2:
-                PopularFragment popularFragment = new PopularFragment();
-                return popularFragment;
+                return new PopularFragment();
             case 3:
-                MyCollectionsFragment myCollectionsFragment = new MyCollectionsFragment();
-                return myCollectionsFragment;
+                return new MyCollectionsFragment();
             default:
                 return new AiringTodayFragment();
         }

@@ -1,4 +1,4 @@
-package net.sebariskode.dramania;
+package net.sebariskode.dramania.popular;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import net.sebariskode.dramania.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyCollectionsFragment extends Fragment {
+public class PopularFragment extends Fragment {
 
 
-    public MyCollectionsFragment() {
+    public PopularFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class MyCollectionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_collections, container, false);
+        return inflater.inflate(R.layout.fragment_popular, container, false);
     }
 
 }

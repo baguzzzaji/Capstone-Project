@@ -1,4 +1,4 @@
-package net.sebariskode.dramania;
+package net.sebariskode.dramania.mycollections;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import net.sebariskode.dramania.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SettingsFragment extends Fragment {
+public class MyCollectionsFragment extends Fragment {
 
 
-    public SettingsFragment() {
+    public MyCollectionsFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        return inflater.inflate(R.layout.fragment_my_collections, container, false);
     }
 
 }
