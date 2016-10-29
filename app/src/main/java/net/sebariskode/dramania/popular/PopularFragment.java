@@ -8,12 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import net.sebariskode.dramania.R;
+import net.sebariskode.dramania.airingtoday.AiringTodayContract;
+import net.sebariskode.dramania.data.Drama;
+
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PopularFragment extends Fragment {
+public class PopularFragment extends Fragment implements PopularContract.View {
 
 
     public PopularFragment() {
@@ -28,4 +32,18 @@ public class PopularFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_popular, container, false);
     }
 
+    @Override
+    public void showNoInternetConnection() {
+
+    }
+
+    @Override
+    public void showDramaItemRecyclerView(List<Drama> dramas) {
+
+    }
+
+    @Override
+    public void setPresenter(PopularContract.Presenter presenter) {
+
+    }
 }

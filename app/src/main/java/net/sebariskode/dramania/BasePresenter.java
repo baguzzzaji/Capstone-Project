@@ -10,7 +10,6 @@ public interface BasePresenter {
 
     void start();
 
-    Context getContext();
-
     void setContext(Context context);
+
 }

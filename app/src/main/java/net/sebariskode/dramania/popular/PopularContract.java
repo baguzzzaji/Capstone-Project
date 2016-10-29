@@ -1,21 +1,20 @@
-package net.sebariskode.dramania.airingtoday;
+package net.sebariskode.dramania.popular;
 
 import net.sebariskode.dramania.BasePresenter;
 import net.sebariskode.dramania.BaseView;
+import net.sebariskode.dramania.airingtoday.AiringTodayContract;
 import net.sebariskode.dramania.data.Drama;
 
 import java.util.List;
 
 /**
- * Created by bagus on 22/10/16.
+ * Created by baguzzzaji on 10/29/2016.
  */
 
-public interface AiringTodayContract {
-
-    interface View extends BaseView<Presenter> {
+public interface PopularContract {
+    interface View extends BaseView<PopularContract.Presenter> {
         void showNoInternetConnection();
         void showDramaItemRecyclerView(List<Drama> dramas);
-        void showDramaDownloadFailed();
     }
 
     interface Presenter extends BasePresenter {

@@ -6,9 +6,13 @@ import android.telephony.NeighboringCellInfo;
 import android.util.Log;
 
 import net.sebariskode.dramania.Utils.NetworkUtil;
+import net.sebariskode.dramania.data.Drama;
 import net.sebariskode.dramania.data.DramaResults;
 import net.sebariskode.dramania.data.themoviedb.RetrofitHelper;
 import net.sebariskode.dramania.data.themoviedb.TmdbInterface;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,9 +28,12 @@ public class AiringTodayPresenter implements AiringTodayContract.Presenter {
     AiringTodayContract.View view;
     Context context;
 
+    List<Drama> dramas;
+
     public AiringTodayPresenter(AiringTodayContract.View view) {
         this.view = view;
         view.setPresenter(this);
+        dramas = new ArrayList<>();
     }
 
     @Override
@@ -45,19 +52,25 @@ public class AiringTodayPresenter implements AiringTodayContract.Presenter {
         call.enqueue(new Callback<DramaResults>() {
             @Override
             public void onResponse(Call<DramaResults> call, Response<DramaResults> response) {
-                Log.d(TAG, "onResponse: " + response.body().getTotal_results());
+                dramas = response.body().getDramas();
+                view.showDramaItemRecyclerView(dramas);
             }
 
             @Override
             public void onFailure(Call<DramaResults> call, Throwable t) {
-                Log.d(TAG, "onFailure: " + t.getMessage());
+                view.showDramaDownloadFailed();
             }
         });
     }
 
     @Override
-    public Context getContext() {
-        return context;
+    public boolean isDramaAvailable() {
+        return dramas.isEmpty();
+    }
+
+    @Override
+    public List<Drama> getDrama() {
+        return dramas;
     }
 
     @Override
