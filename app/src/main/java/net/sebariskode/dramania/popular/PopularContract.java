@@ -15,6 +15,7 @@ public interface PopularContract {
     interface View extends BaseView<PopularContract.Presenter> {
         void showNoInternetConnection();
         void showDramaItemRecyclerView(List<Drama> dramas);
+        void showDramaDownloadFailed();
     }
 
     interface Presenter extends BasePresenter {
